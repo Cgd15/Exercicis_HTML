@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<title>JS3</title>
+		<script type="text/javascript">
+				window.onload = function(){
+				 document.getElementById("salutation").onclick = function() {f()};
+				 function f() {
+				 	var n = document.getElementById("name").value;
+				 	document.getElementById("hi").innerHTML = "Hello " + n + " !";
+				 }
+				}
+		</script>
+	</head>
+	<body>
+		Enter your name:
+		<input type="text" name="name" id="name">
+		<button id="salutation">Salute</button>
+		<p id="hi"></p>
+	</body>
+</html>
