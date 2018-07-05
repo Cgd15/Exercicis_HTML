@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<title>JS2</title>	
+	</head>
+	<body>
+		<div id="first"></div>
+		<div class="second"></div>
+		<div class="second"></div>
+		<div></div>
+		<script type="text/javascript">
+			document.getElementById("first").innerHTML = "PRIMER";
+			var x = document.getElementsByClassName("second");
+			x[0].innerHTML = "SEGON";
+			x[1].innerHTML = "SEGON";
+			var y = document.getElementsByTagName("div");
+			y[3].innerHTML = "TERCER";
+		</script>
+	</body>
+</html>
