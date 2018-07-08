@@ -1,0 +1,66 @@
+img {
+	height: 340px;
+	width: 510px;
+}
+@font-face {
+	font-family: jtype;
+	src: url("Japanese2.ttf");
+}
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url("backg.png"); 
+}
+
+header{
+	font-family: jtype;
+	font-size: 100px;
+	width: 100%;
+	height: 10%;
+	border-bottom-style: solid;
+	border-width: 5px;
+	border-color: #800000;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 25px;
+}
+
+.flex-container{
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	width: 60%;
+	height: 100%;
+	justify-content: flex-start;
+
+	
+}
+
+.flex-container > div{
+	display:flex;
+	position: relative;
+	margin: 10px 10px 0 0;
+	opacity: 0.3;
+}
+
+.flex-container > div > img{
+	display: block;
+	transform: translateZ(0);
+	transition: transform .5s;
+}
+
+.flex-container > div:hover{
+	z-index: 1;
+	opacity: 1;
+
+}
+
+.flex-container > div:hover > img{
+	border-style: solid;
+	border-color: black;
+	border-width: 2px; 
+	transform: scale(1.5); 
+	transition:transform 1s;
+}
