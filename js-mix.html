@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<title>Mix</title>
+		<link rel="stylesheet" type="text/css" href="mix_style.css">
+		<script type="text/javascript">
+			var imagenes = ["red.png","blue.png","green.png"];
+				var i = 0
+				function change() {
+					if(i > imagenes.length-1) i = 0;
+					document.getElementById('images').src = imagenes[i];
+					i++;
+				}
+				setInterval("change()",2000);
+			window.onload = function () {
+				var s = 0;
+        		var m = 0;
+				clock = setInterval(function(){
+					if(s == 60) {
+						s = 0;
+						m++;
+						if(m < 10){
+							document.getElementById("minutos").innerHTML = '0' + m;
+						}
+						else document.getElementById("minutos").innerHTML = m;
+						if(m == 60){
+							m = 0;
+						}
+                	}
+                	if(s < 10){ 
+                		document.getElementById("segundos").innerHTML = '0' + s;
+                	}
+                	else document.getElementById("segundos").innerHTML = s;
+                	s++;
+            	},1000);
+            	document.getElementById('enter').onchange = function saludo (){
+            		var texto = document.getElementById('enter').value;
+            		document.getElementById('saludo').innerHTML = "Hola " + texto + '.'
+
+            	}
+            }
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="container"> 
+				<img src="green.png" id="images" class="slider">
+				<div class="hora">
+					<span id="minutos">00</span>:<span id="segundos">00</span>
+				</div>
+			<article class="input">
+				<input type="text" name="salute" id="enter" class="enter">
+				<p id="saludo" class="saludo"></p>
+			</article>
+		</header>
+		<footer></footer>
+	</body>
+</html>
