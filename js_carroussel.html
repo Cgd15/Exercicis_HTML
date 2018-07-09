@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<title>Carroussel</title>
+			<script type="text/javascript">
+				var imagenes = ["red.png","blue.png","green.png"];
+				var i = 0
+				function change() {
+					if(i > imagenes.length-1) i = 0;
+					document.getElementById('back').src = imagenes[i];
+					i++;
+				}
+				setInterval("change()",2000);
+			</script>
+			<style type="text/css">
+				div{
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div>
+			<img src="green.png" id="back"><br>
+			<button onclick="document.getElementById('back').src = 'red.png'">Red</button>
+			<button onclick="document.getElementById('back').src = 'blue.png'">Blue</button>
+			<button onclick="document.getElementById('back').src = 'green.png'">Green</button>
+		</div>
+	</body>
+</html>
