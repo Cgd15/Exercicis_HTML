@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<title>Clock</title>
+		<script type="text/javascript">
+			window.onload = function () {
+				s = 0;
+        		m = 0;
+				clock = setInterval(function(){
+					if(s == 60) {
+						s = 0;
+						m++;
+						if(m < 10){
+							document.getElementById("minutos").innerHTML = '0' + m;
+						}
+						else document.getElementById("minutos").innerHTML = m;
+						if(m == 60){
+							m = 0;
+						}
+                	}
+                	if(s < 10){ 
+                		document.getElementById("segundos").innerHTML = '0' + s;
+                	}
+                	else document.getElementById("segundos").innerHTML = s;
+                	s++;
+            	},1000);
+            }
+		</script>
+		<style type="text/css">
+			body {
+				height: 100%;
+				width: 100%;
+			}
+
+			div#flex-container {
+				height: 800px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="flex-container">
+			<span id="minutos">00</span>:<span id="segundos">00</span>
+		</div>
+	</body>
+</html>
